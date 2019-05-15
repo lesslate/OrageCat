@@ -10,6 +10,7 @@ public class Player : MonoBehaviour
     
     public float speed;
     public float jumpForce;
+
     private float moveInput;
 
     private Rigidbody2D rb;
@@ -25,6 +26,7 @@ public class Player : MonoBehaviour
     public bool inputLeft = false;
     public bool inputRight = false;
     public bool inputJump = false;
+
 
 
 
@@ -68,13 +70,13 @@ public class Player : MonoBehaviour
             rb.velocity = Vector2.up * jumpForce;
             extraJumps--;
             inputJump = false;
-            Debug.Log("위에이프");
+            
         }
         else if (inputJump && extraJumps == 0 && isGrounded == true)
         {
             rb.velocity = Vector2.up * jumpForce;
             inputJump = false;
-            Debug.Log("밑에이프");
+            
         }
     }
     void Flip()
